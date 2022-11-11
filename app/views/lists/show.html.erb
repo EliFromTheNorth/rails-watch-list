@@ -1,2 +1,13 @@
 <h1><%= @list.name %></h1>
-<h2>Here should be movies in this category:</h2>
+<h2>Here should be my personal list of movies organised by whatever in category <%= @list.name %>:</h2>
+
+<p><%=link_to "Add a new movie",  new_list_bookmark_path(@list)%></p>
+
+
+<h2>Theese are not bookmarks:</h2>
+<% @list.bookmarks.each do |mov| %>
+<%= mov.movie.title %>
+<%= mov.movie.overview %>
+<%= mov.comment %>
+<%= <%= link_to "Delete this movie which is not a bookmark", delete_path WHATTHEFUUUUCK %> %>
+<% end %>
