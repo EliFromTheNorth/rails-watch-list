@@ -1,13 +1,17 @@
 <h1><%= @list.name %></h1>
-<h2>Here should be my personal list of movies organised by whatever in category <%= @list.name %>:</h2>
 
-<p><%=link_to "Add a new movie",  new_list_bookmark_path(@list)%></p>
-
+<%=link_to "Add a new movie",  new_list_bookmark_path(@list)%>
+<br><br>
 
 <h2>Theese are not bookmarks:</h2>
 <% @list.bookmarks.each do |mov| %>
-<%= mov.movie.title %>
-<%= mov.movie.overview %>
-<%= mov.comment %>
-<%= <%= link_to "Delete this movie which is not a bookmark", delete_path WHATTHEFUUUUCK %> %>
+<strong><%= mov.movie.title %></strong> - <%= mov.movie.overview %>
+<br>
+<em>Comment: </em><%= mov.comment %>
+<br>
+<%= link_to "Delete this movie which is not a bookmark", bookmark_path(mov), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<br><hr>
 <% end %>
+<hr>
+<br><br>
+<%=link_to "Back to the lists",  lists_path%>

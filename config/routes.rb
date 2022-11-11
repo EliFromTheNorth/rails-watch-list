@@ -5,16 +5,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "lists#index"
   resources :lists, only: [:index, :show, :new, :create] do
-    resources :bookmarks
+    resources :bookmarks, only: [:new, :create]
   end
 
+  resources :bookmarks, only: [:destroy]
+
 end
-
-# nested bookmarks - only new and dreate
-# separate bookmarks - only destroy
-
-
-
 
 # ************inspiration:********
   # resources: surfers, only: [:index] do
