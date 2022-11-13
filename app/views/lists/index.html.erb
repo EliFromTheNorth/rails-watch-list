@@ -1,8 +1,23 @@
-<h1>Lists:</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://storage.needpix.com/rsynced_images/banner-949931_1280.jpg);">
+  <div class="container">
+    <h1>Watch list</h1>
+    <p>Your movie wish lists are never gonna be messy again!</p>
+    <%= link_to "Create list", new_list_path, class: "btn btn-ghost" %>
+
+  </div>
+</div>
+
+<h1 class="my-lists">My Lists</h1>
+
 <ul>
-  <% @lists.each do |categorylist| %>
-    <li><%= link_to categorylist.name, list_path(categorylist) %></li>
-  <% end %>
+  <div class="cards">
+    <% @lists.each do |categorylist| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/png-vector/20190816/ourmid/pngtree-film-logo-design-template-vector-isolated-illustration-png-image_1693431.jpg)">
+        <li><%= link_to categorylist.name, list_path(categorylist) %></li>
+      </div>
+    <% end %>
+  </div>
 </ul>
 
-<h4><%= link_to "Create list", new_list_path %></h4>
+
+<%#= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>

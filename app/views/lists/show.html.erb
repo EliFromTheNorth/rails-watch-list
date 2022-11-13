@@ -5,6 +5,7 @@
 
 <h2>Theese are not bookmarks:</h2>
 <% @list.bookmarks.each do |mov| %>
+<%#= cl_image_tag @bookmark.photo.key, height: 300, width: 400, crop: :fill %>
 <strong><%= mov.movie.title %></strong> - <%= mov.movie.overview %>
 <br>
 <em>Comment: </em><%= mov.comment %>
@@ -14,4 +15,6 @@
 <% end %>
 <hr>
 <br><br>
+<%= link_to "delete this list", list_path(@list), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+
 <%=link_to "Back to the lists",  lists_path%>
