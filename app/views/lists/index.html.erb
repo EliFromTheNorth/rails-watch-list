@@ -7,17 +7,22 @@
   </div>
 </div>
 
-<h1 class="my-lists">My Lists</h1>
+<h2>My Lists</h2>
 
 <ul>
   <div class="cards">
     <% @lists.each do |categorylist| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/png-vector/20190816/ourmid/pngtree-film-logo-design-template-vector-isolated-illustration-png-image_1693431.jpg)">
-        <li><%= link_to categorylist.name, list_path(categorylist) %></li>
-      </div>
+      <li><%= link_to list_path(categorylist) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "Sci-fi_fantasy_japan" %>)">
+          <p><%= categorylist.name %></p>
+        </div>
+      <% end %>
+    </li>
     <% end %>
   </div>
 </ul>
 
 
 <%#= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
+<%#= image_path "Sci-fi_fantasy_japan" %>

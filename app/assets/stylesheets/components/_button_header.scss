@@ -1,0 +1,19 @@
+// ************************ Button header ************************
+
+.btn-ghost {
+  color: #1de7f5;
+  border: 2px solid #1de7f5;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: #1a5357;
+  background-color: #1de7f5;
+  border: 2px solid #1de7f5;
+
+}

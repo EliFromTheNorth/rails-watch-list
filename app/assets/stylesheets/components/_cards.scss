@@ -1,0 +1,80 @@
+// ************************ CARDS LISTS ************************
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 2px 2px #6c5ee72d;
+}
+
+.card-category:hover {
+box-shadow: none;
+border: 5px solid #f4f4f4;
+border-radius: 10px;
+  p {
+    color:#e8e1bc;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 16px;
+}
+
+li a {
+  text-decoration: none;
+  color: rgb(135, 41, 173);
+}
+
+// ************************ CARDS MOVIES ************************
+.cards-movies {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.movie-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.movie-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.movie-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.movie-card .movie-card-infos {
+  padding: 16px;
+  display:block;
+}

@@ -1,20 +1,38 @@
-<h1><%= @list.name %></h1>
+<div class="banner-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "Sci-fi_fantasy_japan" %>);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+    <div class="container">
+      <%=link_to "Add a new movie",  new_list_bookmark_path(@list), class: "btn btn-ghost btn-banner-list"%>
+    </div>
+  </div>
+</div>
 
-<%=link_to "Add a new movie",  new_list_bookmark_path(@list)%>
-<br><br>
+
 
 <h2>Theese are not bookmarks:</h2>
-<% @list.bookmarks.each do |mov| %>
-<%#= cl_image_tag @bookmark.photo.key, height: 300, width: 400, crop: :fill %>
-<strong><%= mov.movie.title %></strong> - <%= mov.movie.overview %>
-<br>
-<em>Comment: </em><%= mov.comment %>
-<br>
-<%= link_to "Delete this movie which is not a bookmark", bookmark_path(mov), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<br><hr>
-<% end %>
-<hr>
-<br><br>
-<%= link_to "delete this list", list_path(@list), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+<div class="cards-movies container">
+  <% @list.bookmarks.each do |mov| %>
+    <div class="movie-card">
+      <%= image_tag (mov.movie.poster_url) %>
+      <br>
+      <div class="movie-card-infos">
+        <strong><%= mov.movie.title %></strong>
+        <br><br>
+        <%= mov.movie.overview %>
+        <br><br>
+        <em>Comment: </em><%= mov.comment %>
+        <br><br>
+        <%= link_to "Delete", bookmark_path(mov), class: "btn btn-ghost btn-delete-movie", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="container">
+  <%= link_to "Delete this list", list_path(@list), class: "btn btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+  <br>
+  <%=link_to "Back",  lists_path, class: "btn btn-back"%>
+</div>
 
-<%=link_to "Back to the lists",  lists_path%>
+    <%#= cl_image_tag @bookmark.photo.key, height: 300, width: 400, crop: :fill %>
+    <%#= cl_image_tag("mov.movie.poster_url",
+      width: 400, height: 300, crop: :fill) %>

@@ -1,0 +1,49 @@
+.btn-delete-movie {
+  color: rgb(237, 78, 125);
+  border: 1px solid rgb(237, 78, 125);
+  padding: 5px;
+  font-weight: 400;
+}
+
+.btn-delete-movie:hover {
+  color: #ffffff;
+  background-color: rgb(237, 78, 125);
+  border: 1px solid rgb(237, 78, 125);
+  padding: 6px;
+}
+
+.btn-delete {
+  color: rgb(233, 61, 81);
+}
+
+.btn-back {
+  color: #000000;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.btn-back:hover {
+  color: #656565;
+  border: 1px solid #656565;
+  border-radius: 50px;
+}
+
+
+
+  // .btn-ghost {
+  //   color: #1de7f5;
+  //   border: 2px solid #1de7f5;
+  //   padding: 8px 24px;
+  //   border-radius: 50px;
+  //   font-weight: 600;
+  //   opacity: 0.6;
+  //   transition: opacity 0.3s ease;
+  // }
+
+  // .btn-ghost:hover {
+  //   opacity: 1;
+  //   color: #1a5357;
+  //   background-color: #1de7f5;
+  //   border: 2px solid #1de7f5;
+
+  // }
