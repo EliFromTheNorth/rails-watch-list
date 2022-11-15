@@ -15,6 +15,21 @@
 }
 
 .btn-banner-list {
-  // margin-top: 10px;
-  margin: 0 auto;
+  margin-top: 10px;
+  color:rgb(234, 184, 124);
+  border: 2px solid rgb(234, 184, 124);
+  font-weight: 400;
+   //  margin: 0 auto;
+}
+
+.btn-banner-list:hover {
+  border: 2px solid rgb(234, 184, 124);
+  background-color: rgb(234, 184, 124);
+  color: rgb(81, 47, 6);
+  font-weight: 400;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
