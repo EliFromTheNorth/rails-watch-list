@@ -13,9 +13,15 @@
   <div class="cards">
     <% @lists.each do |categorylist| %>
       <li><%= link_to list_path(categorylist) do %>
+      <% if categorylist.photo.attached? %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path categorylist.photo.key, height: 300, width: 400, crop: :fill %>)">
           <p><%= categorylist.name %></p>
         </div>
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://storage.needpix.com/rsynced_images/banner-949931_1280.jpg)">
+          <p><%= categorylist.name %></p>
+        </div>
+      <% end %>
       <% end %>
     </li>
     <% end %>
